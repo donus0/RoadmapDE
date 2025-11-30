@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://roadmappers.ru/DWH/Additional_information/ACID/">
+        <link rel="canonical" href="https://roadmappers.ru/DWH/DataLakeHouse/ICEBERG/">
       
       
       
@@ -930,22 +930,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#acid" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ACID
+        Немного об этой главе
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="ACID">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache-iceberg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apache Iceberg
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Apache Iceberg">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Атомарность
+        Введение
       
     </span>
   </a>
@@ -953,10 +964,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#apache-iceberg_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Согласованность
+        Что такое Apache Iceberg?
       
     </span>
   </a>
@@ -967,10 +978,60 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Долговечность
+        Ключевые преимущества
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-iceberg_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Архитектура Apache Iceberg
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Архитектура Apache Iceberg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Слой данных (Data Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-metadata-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Слой метаданных (Metadata Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-catalog-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Каталог (Catalog Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -978,46 +1039,30 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Изоляция
+        Ключевые особенности архитектуры
       
     </span>
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+          <li class="md-nav__item">
+  <a href="#mor-vs-cow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Виды изоляции
+        Файлы удаления и стратегии записи (MOR vs COW)
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Аномалиии
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Аномалиии">
+    <nav class="md-nav" aria-label="Файлы удаления и стратегии записи (MOR vs COW)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Аномалия "потерянных обновлений"
+        Типы файлов удаления
       
     </span>
   </a>
@@ -1025,10 +1070,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Аномалия "грязного чтения"
+        Стратегии записи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Стратегии записи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-copy-on-write-cow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Copy-on-Write (COW)
       
     </span>
   </a>
@@ -1036,21 +1093,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#2-merge-on-read-mor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Аномалия "не повторяющего чтения"
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Аномалия "фантомного чтения"
+        2. Merge-on-Read (MOR)
       
     </span>
   </a>
@@ -1059,6 +1105,115 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cow-mor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сравнение COW и MOR
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Примеры работы с таблицами(отличные от обычного SQL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spark-iceberg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        запуск spark-сессии с iceberg
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Создание таблицы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-travel-snapshot-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time travel (по snapshot-id)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-travel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time travel (по времени)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Компактизация файлов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Очистка старых снапшотов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Удаление delete-файлов
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1082,108 +1237,224 @@
   
 
 
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=103580753', 'ym');
-
-    ym(103580753, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/103580753" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 <h2 id="_1">Куратор раздела</h2>
-<p><img align="left" width="200" src="../png/shust.jpg" /></p>
-<p><strong>Шустиков Владимир</strong>, оставивший военную жизнь позади и ушедший в данные с головой. Работаю с данными более 2х лет и останавливаться не собираюсь! Веду:</p>
-<p><a href="https://t.me/Shust_DE">Telegram канал</a></p>
-<p><a href="https://www.youtube.com/@shust_de">Youtube канал</a></p>
-<p>Если хочешь сменить текущую профессию на Дата Инженера — пиши не стесняйся, я сам проходил этот не легкий путь и тебе помогу https://t.me/ShustDE.</p>
-<p>Хочешь улучшить текущий раздел, внести недостающее или поправить формулировку? Предлагай PR и тегай <a href="https://github.com/ShustGF">@ShustGF</a>.</p>
-<h1 id="acid">ACID</h1>
-<p>Простое опрепределение:</p>
-<p><strong>Транзакция</strong> — последовательность команд, которая удовлетворяет требованием ACID.</p>
-<p>Развёрнутое определение:</p>
-<p><strong>Транзакция</strong> — последовательность команд, которая сохраняет согласованность базы данных при условии, что транзакция выполняется полностью и без помех со стороны других транзакций.</p>
-<p><strong>ACID</strong> — это аббревиатура состоящая из 4 компонентов:</p>
+<p><img align="left" width="200" src="../../../png/amp.jpg" /></p>
+<p><strong>Подвальный Артем</strong>, 
+                                                                                                                      Data Engineer</p>
+<p><a href="https://t.me/dataengineerlab">Канал Data Engineer Lab</a></p>
+<p>Хочешь перейти в дата-инженерию, но не знаешь с чего начать? Пиши -  составим резюме, продумаем твое развитие <a href="https://t.me/ampodvalniy">https://t.me/ampodvalniy</a></p>
+<p>Хочешь улучшить текущий раздел, внести недостающее или поправить формулировку? Предлагай PR и тегай <a href="https://github.com/Artemlin6231">@Artemlin6231</a></p>
+<h2 id="_2">Немного об этой главе</h2>
+<p>Многие компания начинают сейчас переходить на Iceberg и концепцию Lakehouse. Так что знакомство с данным форматом данных позволит держать руку на пульсе)</p>
+<p>Приятного изучения)</p>
+<h1 id="apache-iceberg">Apache Iceberg</h1>
+<h2 id="_3">Введение</h2>
+<p>Данные стали ключевым активом для организаций: они необходимы для анализа
+тенденций, построения прогнозов и поддержки принятия решений. Рост объёмов
+и скорости генерации данных потребовал появления новых архитектур
+хранения и обработки.</p>
+<p>Раньше использовались:
+- <strong>Хранилища данных (Data Warehouse)</strong> — надёжные, но дорогие и ограниченные
+только структурированными данными.
+- <strong>Озёра данных (Data Lake)</strong> — гибкие и дешёвые, но без гарантий ACID
+и полноценной работы с транзакциями.</p>
+<p>Появился запрос на архитектуру, которая сочетает гибкость озёр данных
+и надёжность хранилищ.</p>
+<hr />
+<h2 id="apache-iceberg_1">Что такое Apache Iceberg?</h2>
+<p><strong>Apache Iceberg</strong> — это открытый табличный формат для озёр данных,
+который:
+- Абстрагирует физическое хранение файлов.
+- Обеспечивает транзакционность (ACID) и управление версиями (snapshots).
+- Поддерживает эволюцию схем и секционирования без миграции данных.
+- Делает возможной эффективную SQL-аналитику прямо в Data Lake.</p>
+<hr />
+<h2 id="_4">Ключевые преимущества</h2>
 <ul>
-<li>Атомарность</li>
-<li>Согласованность</li>
-<li>Долговечность </li>
-<li>Изоляция</li>
+<li><strong>Гибкость</strong>: хранение любых форматов данных (Parquet, ORC, Avro).</li>
+<li><strong>Транзакции</strong>: безопасные вставки, обновления, удаления.</li>
+<li><strong>Time Travel</strong>: доступ к состоянию таблицы в прошлом.</li>
+<li><strong>Совместимость</strong>: интеграция с Apache Spark, Flink, Trino, Dremio и другими движками.</li>
+<li><strong>Масштабируемость</strong>: изначально разработан для работы с петабайтами данных (Netflix).</li>
 </ul>
-<h2 id="_2">Атомарность</h2>
-<p>Атомарность — это свойство, которое гарантирует, что каждая транзакция будет выполнена полностью, либо не будет выполнена совсем. </p>
-<h2 id="_3">Согласованность</h2>
-<p>Согласованность, подразумевает, что каждая выполненная транзакция переводит БД из одного согласованного состояния к следующему согласованному состоянию</p>
-<h2 id="_4">Долговечность</h2>
-<p>Долговечность означает сохранность данных, даже после сбоя системы.</p>
-<h2 id="_5">Изоляция</h2>
-<p>Изоляция, подразумевает собой, что одновременные транзакции не будут влиять друг на друга. </p>
-<h1 id="_6">Виды изоляции</h1>
-<p>Согласно стандарта SQL, транзакции имеют 4 уровня изоляции и каждая из них блокирует определённые возникающие аномалии. Все виды представлены в таблице. </p>
+<h2 id="apache-iceberg_2">Архитектура Apache Iceberg</h2>
+<p>Apache Iceberg построен по многоуровневой архитектуре, которая разделяет
+данные, метаданные и каталог. Такой подход обеспечивает масштабируемость,
+гибкость и поддержку транзакций ACID в озёрах данных.</p>
+<p align="center">
+   <img src="../../../png/apache_iceberg_architecture.png" alt="apache iceberg" width="800" height="1000"/>
+</p>
+<hr />
+<h3 id="1-data-layer">1. Слой данных (Data Layer)</h3>
+<ul>
+<li>Хранит фактические данные таблицы.  </li>
+<li>Элементы:</li>
+<li><strong>Файлы данных</strong> (Parquet, ORC, Avro) — содержат строки таблицы.  </li>
+<li><strong>Файлы удаления</strong> — описывают строки или файлы, которые были удалены
+    (<code>DELETE</code>, <code>MERGE</code>).  </li>
+<li>Данные обычно размещаются в распределённых файловых системах (<strong>HDFS</strong>) или
+объектных хранилищах (<strong>Amazon S3, ADLS, GCS</strong>).  </li>
+<li>Слой независим от вычислительного движка, что делает его универсальным.</li>
+</ul>
+<hr />
+<h3 id="2-metadata-layer">2. Слой метаданных (Metadata Layer)</h3>
+<ul>
+<li>Центральная часть Iceberg, отвечающая за структуру и историю таблицы.  </li>
+<li>Состоит из:</li>
+<li><strong>Файлов манифеста</strong> — список файлов данных и статистика по ним
+    (кол-во строк, min/max значения).  </li>
+<li><strong>Списков манифестов</strong> — объединяют манифесты в один снимок (snapshot).  </li>
+<li><strong>Файлов метаданных</strong> — определяют схему, секционирование, список снимков.  </li>
+<li><strong>Puffin-файлов</strong> — хранят расширенную статистику и метрики.  </li>
+<li>Метаданные образуют дерево, что позволяет эффективно планировать запросы,
+используя partition pruning и статистику.</li>
+</ul>
+<hr />
+<h3 id="3-catalog-layer">3. Каталог (Catalog Layer)</h3>
+<ul>
+<li>Управляет именами таблиц и указывает на актуальные файлы метаданных.  </li>
+<li>Вместо хранения путей к директориям (как в Hive) Iceberg работает
+с <strong>ссылкой на последний мета-файл</strong>.  </li>
+<li>Поддерживаемые реализации:</li>
+<li><strong>Hive Metastore</strong>  </li>
+<li><strong>AWS Glue</strong>  </li>
+<li><strong>Project Nessie</strong>  </li>
+<li><strong>JDBC/REST-каталоги</strong>  </li>
+<li>Каталог обеспечивает согласованность между различными движками
+(Spark, Flink, Trino и др.).</li>
+</ul>
+<hr />
+<h2 id="_5">Ключевые особенности архитектуры</h2>
+<ul>
+<li><strong>ACID-транзакции</strong> без централизованной СУБД.  </li>
+<li><strong>Эволюция схемы и секционирования</strong> без миграции данных.  </li>
+<li><strong>Time travel</strong> — возможность читать таблицу в прошлом состоянии.  </li>
+<li><strong>Масштабируемость</strong> — изначально спроектирован для работы с петабайтами данных.  </li>
+</ul>
+<hr />
+<h2 id="mor-vs-cow">Файлы удаления и стратегии записи (MOR vs COW)</h2>
+<p>В Apache Iceberg операции <code>DELETE</code> и <code>UPDATE</code> реализуются через специальные
+<strong>файлы удаления (delete files)</strong>. Они позволяют эффективно управлять изменениями,
+не переписывая сразу все данные.</p>
+<hr />
+<h3 id="_6">Типы файлов удаления</h3>
+<ol>
+<li><strong>Position Deletes</strong></li>
+<li>Содержат ссылки на конкретные строки в файле данных по смещению (row position).</li>
+<li>
+<p>Подходят для точечных обновлений и удалений.</p>
+</li>
+<li>
+<p><strong>Equality Deletes</strong></p>
+</li>
+<li>Хранят условие удаления по значениям столбцов (например: <code>user_id=12345</code>).</li>
+<li>Удобны для массовых удалений или обновлений по ключу.</li>
+</ol>
+<hr />
+<h3 id="_7">Стратегии записи</h3>
+<h4 id="1-copy-on-write-cow">1. Copy-on-Write (COW)</h4>
+<ul>
+<li>При обновлениях или удалениях Iceberg <strong>переписывает целый файл данных</strong>,
+  исключая ненужные строки.</li>
+<li><strong>Плюсы</strong>:</li>
+<li>Простая модель — при чтении не требуется дополнительная обработка.</li>
+<li>Быстрое и лёгкое чтение.</li>
+<li><strong>Минусы</strong>:</li>
+<li>Запись дороже по времени и ресурсам (особенно при малых изменениях).</li>
+<li><strong>Когда использовать</strong>:</li>
+<li>Таблицы с редкими изменениями.</li>
+<li>Сценарии, где приоритет — скорость чтения.</li>
+</ul>
+<h4 id="2-merge-on-read-mor">2. Merge-on-Read (MOR)</h4>
+<ul>
+<li>Изменения фиксируются во <strong>файлах удаления</strong>, а переписывание файлов откладывается.</li>
+<li>При чтении движок объединяет (merge) данные и delete-файлы.</li>
+<li><strong>Плюсы</strong>:</li>
+<li>Быстрая запись, минимальные накладные расходы на обновления.</li>
+<li>Подходит для потоковой загрузки (streaming).</li>
+<li><strong>Минусы</strong>:</li>
+<li>Более тяжёлое чтение (нужно применять delete-файлы поверх данных).</li>
+<li><strong>Когда использовать</strong>:</li>
+<li>Таблицы с частыми обновлениями.</li>
+<li>Real-time аналитика, где важна скорость записи.</li>
+</ul>
+<hr />
+<h3 id="cow-mor">Сравнение COW и MOR</h3>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Предотвращаемые аномалии</th>
+<th>Характеристика</th>
+<th>Copy-on-Write (COW)</th>
+<th>Merge-on-Read (MOR)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>READ UNCOMMITTED</strong></td>
-<td>«потерянных обновлений»</td>
+<td>Скорость записи</td>
+<td>Медленная (переписывание)</td>
+<td>Быстрая (delete files)</td>
 </tr>
 <tr>
-<td><strong>READ COMMITTED</strong></td>
-<td>«потерянных обновлений», «грязного чтения»</td>
+<td>Скорость чтения</td>
+<td>Быстрая</td>
+<td>Медленнее (merge при чтении)</td>
 </tr>
 <tr>
-<td><strong>REPEATABLE READ</strong></td>
-<td>«потерянных обновлений», «грязного чтения», «не повторяющего чтения»</td>
+<td>Простота модели</td>
+<td>Простая</td>
+<td>Более сложная</td>
 </tr>
 <tr>
-<td><strong>SERIALIZABLE</strong></td>
-<td>предотвращает любые аномалии</td>
+<td>Использование</td>
+<td>Batch-аналитика</td>
+<td>Streaming и частые апдейты</td>
 </tr>
 </tbody>
 </table>
-<p>Теперь пройдемся по каждому виду и посмотрим от каких аномалий они предотвращают.</p>
-<h1 id="_7">Аномалиии</h1>
-<h2 id="_8">Аномалия "потерянных обновлений"</h2>
-<p>Аномалия <strong>потерянных обновлений</strong> подразумевает, что первая транзакция может изменить данные, запущенные после неё транзакций.</p>
-<p>Пример:</p>
-<p align="center">
-    <img src="./../../../png/dwh_ai_acid_lost_data.png" alt="Аномалия потерянных обновлений" />
-</p>
-
-<p>Есть 2 клиента, и 1й клиент запускает транзакцию на изменение данных, во время выполнения данной транзакции 2й клиент запускает еще одну транзакцию, которая заканчивает выполнение до окончания транзакции клиента 1, после чего заканчивается транзакция 1го клиента. Как мы видим из рисунка значения изменены на основе транзакции 1, а транзакция 2 полностью перезаписана.</p>
-<h2 id="_9">Аномалия "грязного чтения"</h2>
-<p>Под <strong>грязным чтением</strong> понимается ситуация, когда запрос видит незафиксированные изменения других транзакций.</p>
-<p>Пример:</p>
-<p align="center">
-    <img src="./../../../png/dwh_ai_acid_dirty_reading.png" alt="Аномалия грязного чтения" />
-</p>
-
-<p>Первый пользователь запускает транзакцию на изменение данных, 2й считывает данные первый раз и видит еще не измененные данные, после этого ждет 2 секунды, во время этих 2х секунд 1й доходит до изменения 100го идентификатора и продолжает выполнение транзакции, после этого 2й еще раз считывает данные и видит, что данные изменились, хотя транзакция 1го еще не завершена. </p>
-<h2 id="_10">Аномалия "не повторяющего чтения"</h2>
-<p>Аномалия <strong>не повторяющего чтения</strong>, это когда повторное чтение строки вернет другое значение, если оно было изменено и зафиксировано другой транзакцией.</p>
-<p>Пример:</p>
-<p align="center">
-    <img src="./../../../png/dwh_ai_acid_non_repetitive_reading.png" alt="Аномалия не повторяющего чтения" />
-</p>
-
-<p>Второй пользователь начинает читать данные и получает определённое значение выборки, после у него запускается задержка на 20 секунд, в это время 1 клиент, изменяет значения в таблице, затрагивающее значение 2го клиента, и заканчивает транзакцию, после этого 2й пользователь еще раз считывает этот же запрос и получает совсем другую выборку.</p>
-<h2 id="_11">Аномалия "фантомного чтения"</h2>
-<p>Аномалия <strong>фантомного чтения</strong>, это когда повторный запрос по одному и тому же условию вернет другую выборку, если другая транзакция добавила и зафиксировала новые строки, удовлетворяющие этому условию.</p>
-<p>Пример:</p>
-<p align="center">
-    <img src="./../../../png/dwh_ai_acid_phantom_reading.png" alt="Аномалия фантомного чтения" />
-</p>
-
-<p>Второй клиент начинает считывать данные и ожидает 20 секунд. А это время 1й клиент вносит новые данные в таблицу и заканчивает транзакцию. После ожидания 2й клиент еще раз считывает данные и получает совсем другой ответ, так как в его ответ попали новые строки.</p>
+<h2 id="sql">Примеры работы с таблицами(отличные от обычного SQL)</h2>
+<p>```python</p>
+<h1 id="spark-iceberg">запуск spark-сессии с iceberg</h1>
+<p>from pyspark.sql import SparkSession</p>
+<p>spark = (
+    SparkSession.builder
+    .appName("IcebergExample")
+    .config("spark.sql.catalog.my_catalog", "org.apache.iceberg.spark.SparkCatalog")
+    .config("spark.sql.catalog.my_catalog.type", "hive")
+    .config("spark.sql.catalog.my_catalog.uri", "thrift://localhost:9083")
+    .getOrCreate()
+)</p>
+<h1 id="_8">Создание таблицы</h1>
+<p>spark.sql("""
+CREATE TABLE my_catalog.db.orders (
+  order_id BIGINT,
+  customer_id BIGINT,
+  amount DECIMAL(10,2),
+  created_at TIMESTAMP
+)
+USING iceberg
+PARTITIONED BY (days(created_at))
+""")</p>
+<h1 id="time-travel-snapshot-id">Time travel (по snapshot-id)</h1>
+<p>spark.sql("""
+SELECT * FROM my_catalog.db.orders VERSION AS OF 918273645
+""").show()</p>
+<h1 id="time-travel">Time travel (по времени)</h1>
+<p>spark.sql("""
+SELECT * FROM my_catalog.db.orders TIMESTAMP AS OF '2025-09-28 14:00:00'
+""").show()</p>
+<h1 id="_9">Компактизация файлов</h1>
+<p>spark.sql("""
+CALL my_catalog.system.rewrite_data_files('db.orders')
+""")</p>
+<h1 id="_10">Очистка старых снапшотов</h1>
+<p>spark.sql("""
+CALL my_catalog.system.expire_snapshots('db.orders')
+  WHERE committed_at &lt; TIMESTAMP '2025-09-01 00:00:00'
+""")</p>
+<h1 id="delete-">Удаление delete-файлов</h1>
+<p>spark.sql("""
+CALL my_catalog.system.remove_orphan_files('db.orders')
+""")</p>
 
 
 
